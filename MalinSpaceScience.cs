@@ -74,7 +74,7 @@ namespace MalinSpaceScience
         }
         #endregion
 
-        
+    #region UTILITY
         /// 4.5	Create a method called “NumberOfNodes” that will return an integer which is the number of nodes(elements) in a LinkedList. 
         /// The method signature will have an input parameter of type LinkedList, and the calling code argument is the linkedlist name.
         /// <param name="sensorList"> linkedlist for sensor A abd Sensor B</param>
@@ -97,6 +97,10 @@ namespace MalinSpaceScience
                 listbox.Items.Add(sensorList.ElementAt(i).ToString());
             }
         }
+
+        #endregion
+
+   
     }
 
 }
