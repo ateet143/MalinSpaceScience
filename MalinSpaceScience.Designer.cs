@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.listViewData = new System.Windows.Forms.ListView();
             this.SensorA = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SensorB = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -65,15 +66,15 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txTargetSA = new System.Windows.Forms.TextBox();
             this.txTargetSB = new System.Windows.Forms.TextBox();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.vScrollBar2 = new System.Windows.Forms.VScrollBar();
-            this.vScrollBar3 = new System.Windows.Forms.VScrollBar();
             this.Sigma = new System.Windows.Forms.NumericUpDown();
             this.Mu = new System.Windows.Forms.NumericUpDown();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.Sigma)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Mu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // listViewData
@@ -106,6 +107,7 @@
             this.listBoxSensorA.FormattingEnabled = true;
             this.listBoxSensorA.Location = new System.Drawing.Point(396, 38);
             this.listBoxSensorA.Name = "listBoxSensorA";
+            this.listBoxSensorA.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.listBoxSensorA.Size = new System.Drawing.Size(100, 472);
             this.listBoxSensorA.TabIndex = 1;
             // 
@@ -114,6 +116,7 @@
             this.listBoxSensorB.FormattingEnabled = true;
             this.listBoxSensorB.Location = new System.Drawing.Point(670, 38);
             this.listBoxSensorB.Name = "listBoxSensorB";
+            this.listBoxSensorB.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
             this.listBoxSensorB.Size = new System.Drawing.Size(100, 472);
             this.listBoxSensorB.TabIndex = 2;
             // 
@@ -237,6 +240,7 @@
             this.btSensorASearchIterative.TabIndex = 14;
             this.btSensorASearchIterative.Text = "Search";
             this.btSensorASearchIterative.UseVisualStyleBackColor = true;
+            this.btSensorASearchIterative.Click += new System.EventHandler(this.btSensorASearchIterative_Click);
             // 
             // btSensorASearchRecursive
             // 
@@ -247,6 +251,7 @@
             this.btSensorASearchRecursive.TabIndex = 15;
             this.btSensorASearchRecursive.Text = "Search";
             this.btSensorASearchRecursive.UseVisualStyleBackColor = true;
+            this.btSensorASearchRecursive.Click += new System.EventHandler(this.btSensorASearchRecursive_Click);
             // 
             // btSensorASortSelection
             // 
@@ -257,6 +262,7 @@
             this.btSensorASortSelection.TabIndex = 16;
             this.btSensorASortSelection.Text = "Sort";
             this.btSensorASortSelection.UseVisualStyleBackColor = true;
+            this.btSensorASortSelection.Click += new System.EventHandler(this.btSensorASortSelection_Click);
             // 
             // btSensorASortInsertion
             // 
@@ -267,6 +273,7 @@
             this.btSensorASortInsertion.TabIndex = 17;
             this.btSensorASortInsertion.Text = "Sort";
             this.btSensorASortInsertion.UseVisualStyleBackColor = true;
+            this.btSensorASortInsertion.Click += new System.EventHandler(this.btSensorASortInsertion_Click);
             // 
             // btSensorBSearchIterative
             // 
@@ -277,6 +284,7 @@
             this.btSensorBSearchIterative.TabIndex = 18;
             this.btSensorBSearchIterative.Text = "Search";
             this.btSensorBSearchIterative.UseVisualStyleBackColor = true;
+            this.btSensorBSearchIterative.Click += new System.EventHandler(this.btSensorBSearchIterative_Click);
             // 
             // btSensorBSearchRecursive
             // 
@@ -287,6 +295,7 @@
             this.btSensorBSearchRecursive.TabIndex = 19;
             this.btSensorBSearchRecursive.Text = "Search";
             this.btSensorBSearchRecursive.UseVisualStyleBackColor = true;
+            this.btSensorBSearchRecursive.Click += new System.EventHandler(this.btSensorBSearchRecursive_Click);
             // 
             // btSensorBSortSelection
             // 
@@ -297,6 +306,7 @@
             this.btSensorBSortSelection.TabIndex = 20;
             this.btSensorBSortSelection.Text = "Sort";
             this.btSensorBSortSelection.UseVisualStyleBackColor = true;
+            this.btSensorBSortSelection.Click += new System.EventHandler(this.btSensorBSortSelection_Click);
             // 
             // btSensorBSortInsertion
             // 
@@ -307,6 +317,7 @@
             this.btSensorBSortInsertion.TabIndex = 21;
             this.btSensorBSortInsertion.Text = "Sort";
             this.btSensorBSortInsertion.UseVisualStyleBackColor = true;
+            this.btSensorBSortInsertion.Click += new System.EventHandler(this.btSensorBSortInsertion_Click);
             // 
             // label11
             // 
@@ -322,6 +333,7 @@
             this.txSensorASearchIterative.Name = "txSensorASearchIterative";
             this.txSensorASearchIterative.Size = new System.Drawing.Size(136, 20);
             this.txSensorASearchIterative.TabIndex = 23;
+            this.txSensorASearchIterative.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txSensorBSearchIterative
             // 
@@ -329,6 +341,7 @@
             this.txSensorBSearchIterative.Name = "txSensorBSearchIterative";
             this.txSensorBSearchIterative.Size = new System.Drawing.Size(136, 20);
             this.txSensorBSearchIterative.TabIndex = 24;
+            this.txSensorBSearchIterative.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txSensorASearchRecursive
             // 
@@ -336,6 +349,7 @@
             this.txSensorASearchRecursive.Name = "txSensorASearchRecursive";
             this.txSensorASearchRecursive.Size = new System.Drawing.Size(136, 20);
             this.txSensorASearchRecursive.TabIndex = 25;
+            this.txSensorASearchRecursive.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txSensorBSearchRecursive
             // 
@@ -343,6 +357,7 @@
             this.txSensorBSearchRecursive.Name = "txSensorBSearchRecursive";
             this.txSensorBSearchRecursive.Size = new System.Drawing.Size(136, 20);
             this.txSensorBSearchRecursive.TabIndex = 26;
+            this.txSensorBSearchRecursive.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txSensorASortSelection
             // 
@@ -350,6 +365,7 @@
             this.txSensorASortSelection.Name = "txSensorASortSelection";
             this.txSensorASortSelection.Size = new System.Drawing.Size(136, 20);
             this.txSensorASortSelection.TabIndex = 27;
+            this.txSensorASortSelection.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txSensorBSortSelection
             // 
@@ -357,6 +373,7 @@
             this.txSensorBSortSelection.Name = "txSensorBSortSelection";
             this.txSensorBSortSelection.Size = new System.Drawing.Size(136, 20);
             this.txSensorBSortSelection.TabIndex = 28;
+            this.txSensorBSortSelection.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txSensorASortInsertion
             // 
@@ -364,6 +381,7 @@
             this.txSensorASortInsertion.Name = "txSensorASortInsertion";
             this.txSensorASortInsertion.Size = new System.Drawing.Size(136, 20);
             this.txSensorASortInsertion.TabIndex = 29;
+            this.txSensorASortInsertion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txSensorBSortInsertion
             // 
@@ -371,6 +389,7 @@
             this.txSensorBSortInsertion.Name = "txSensorBSortInsertion";
             this.txSensorBSortInsertion.Size = new System.Drawing.Size(136, 20);
             this.txSensorBSortInsertion.TabIndex = 30;
+            this.txSensorBSortInsertion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Target
             // 
@@ -398,6 +417,8 @@
             this.txTargetSA.Name = "txTargetSA";
             this.txTargetSA.Size = new System.Drawing.Size(47, 20);
             this.txTargetSA.TabIndex = 33;
+            this.txTargetSA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txTargetSA_KeyPress);
+            this.txTargetSA.Validating += new System.ComponentModel.CancelEventHandler(this.txTargetSA_Validating);
             // 
             // txTargetSB
             // 
@@ -405,32 +426,18 @@
             this.txTargetSB.Name = "txTargetSB";
             this.txTargetSB.Size = new System.Drawing.Size(47, 20);
             this.txTargetSB.TabIndex = 34;
-            // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Location = new System.Drawing.Point(175, 110);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(18, 407);
-            this.vScrollBar1.TabIndex = 35;
-            // 
-            // vScrollBar2
-            // 
-            this.vScrollBar2.Location = new System.Drawing.Point(474, 38);
-            this.vScrollBar2.Name = "vScrollBar2";
-            this.vScrollBar2.Size = new System.Drawing.Size(22, 472);
-            this.vScrollBar2.TabIndex = 36;
-            // 
-            // vScrollBar3
-            // 
-            this.vScrollBar3.Location = new System.Drawing.Point(749, 38);
-            this.vScrollBar3.Name = "vScrollBar3";
-            this.vScrollBar3.Size = new System.Drawing.Size(21, 472);
-            this.vScrollBar3.TabIndex = 37;
+            this.txTargetSB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txTargetSB_KeyPress);
+            this.txTargetSB.Validating += new System.ComponentModel.CancelEventHandler(this.txTargetSB_Validating);
             // 
             // Sigma
             // 
             this.Sigma.Location = new System.Drawing.Point(29, 38);
             this.Sigma.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.Sigma.Minimum = new decimal(new int[] {
             10,
             0,
             0,
@@ -438,19 +445,33 @@
             this.Sigma.Name = "Sigma";
             this.Sigma.Size = new System.Drawing.Size(43, 20);
             this.Sigma.TabIndex = 39;
+            this.Sigma.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             // 
             // Mu
             // 
             this.Mu.Location = new System.Drawing.Point(104, 38);
             this.Mu.Maximum = new decimal(new int[] {
-            50,
+            75,
+            0,
+            0,
+            0});
+            this.Mu.Minimum = new decimal(new int[] {
+            35,
             0,
             0,
             0});
             this.Mu.Name = "Mu";
             this.Mu.Size = new System.Drawing.Size(43, 20);
             this.Mu.TabIndex = 40;
-            
+            this.Mu.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             // 
             // label13
             // 
@@ -472,18 +493,27 @@
             this.label14.TabIndex = 42;
             this.label14.Text = "Mu";
             // 
+            // vScrollBar1
+            // 
+            this.vScrollBar1.Location = new System.Drawing.Point(176, 265);
+            this.vScrollBar1.Name = "vScrollBar1";
+            this.vScrollBar1.Size = new System.Drawing.Size(17, 80);
+            this.vScrollBar1.TabIndex = 43;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // MalinSpaceScience
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(795, 529);
+            this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.Mu);
             this.Controls.Add(this.Sigma);
-            this.Controls.Add(this.vScrollBar3);
-            this.Controls.Add(this.vScrollBar2);
-            this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.txTargetSB);
             this.Controls.Add(this.txTargetSA);
             this.Controls.Add(this.label12);
@@ -523,6 +553,7 @@
             this.Text = "Malin Space Science";
             ((System.ComponentModel.ISupportInitialize)(this.Sigma)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Mu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -565,15 +596,14 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txTargetSA;
         private System.Windows.Forms.TextBox txTargetSB;
-        private System.Windows.Forms.VScrollBar vScrollBar1;
-        private System.Windows.Forms.VScrollBar vScrollBar2;
-        private System.Windows.Forms.VScrollBar vScrollBar3;
         private System.Windows.Forms.NumericUpDown Sigma;
         private System.Windows.Forms.NumericUpDown Mu;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ColumnHeader SensorA;
         private System.Windows.Forms.ColumnHeader SensorB;
+        private System.Windows.Forms.VScrollBar vScrollBar1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 
