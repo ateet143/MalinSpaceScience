@@ -141,14 +141,17 @@ namespace MalinSpaceScience
         //4.12	Create four button click methods that will sort the LinkedList using the Selection and Insertion methods
         private void btSensorASortSelection_Click(object sender, EventArgs e)
         {
+            Trace.WriteLine("Sensor A is being sorted");
             if(listSensorA.Count > 0)
             {
                 // create as instance of stopWatch
                 //start the watch before sorting and stop after the sorting
                 var stopWatch = new Stopwatch();
                 stopWatch.Start();
-                SelectionSort(listSensorA);
+              var result =  SelectionSort(listSensorA);
                 stopWatch.Stop();
+                Trace.WriteLine(stopWatch.Elapsed.ToString() + " miliseconds taken");
+                Trace.WriteLine("Sorted:" + result);
                 //Displays the data in the listbox
                 DisplayListboxData(listSensorA, listBoxSensorA);
                 //display the time under the corresponding textbox
@@ -163,12 +166,15 @@ namespace MalinSpaceScience
 
         private void btSensorBSortSelection_Click(object sender, EventArgs e)
         {
+            Trace.WriteLine("Sensor B is being sorted");
             if (listSensorB.Count > 0)
             {
                 var stopWatch = new Stopwatch();
                 stopWatch.Start();
-                SelectionSort(listSensorB);
+              var result=  SelectionSort(listSensorB);
                 stopWatch.Stop();
+                Trace.WriteLine(stopWatch.Elapsed.ToString() + " miliseconds taken");
+                Trace.WriteLine("Sorted:" + result);
                 DisplayListboxData(listSensorB, listBoxSensorB);
                 TimerAndDisplay(stopWatch, txSensorBSortSelection);
             }
@@ -181,12 +187,15 @@ namespace MalinSpaceScience
 
         private void btSensorASortInsertion_Click(object sender, EventArgs e)
         {
+            Trace.WriteLine("Sensor A is being sorted");
             if (listSensorA.Count > 0)
             {
                 var stopWatch = new Stopwatch();
                 stopWatch.Start();
-                InsertionSort(listSensorA);
+              var result =  InsertionSort(listSensorA);
                 stopWatch.Stop();
+                Trace.WriteLine(stopWatch.Elapsed.ToString() + " miliseconds taken");
+                Trace.WriteLine("Sorted:" + result);
                 DisplayListboxData(listSensorA, listBoxSensorA);
                 TimerAndDisplay(stopWatch, txSensorASortInsertion);
             }
@@ -198,12 +207,15 @@ namespace MalinSpaceScience
 
         private void btSensorBSortInsertion_Click(object sender, EventArgs e)
         {
+            Trace.WriteLine("Sensor B is being sorted");
             if (listSensorB.Count > 0)
             {
                 var stopWatch = new Stopwatch();
                 stopWatch.Start();
-                InsertionSort(listSensorB);
+              var result =  InsertionSort(listSensorB);
                 stopWatch.Stop();
+                Trace.WriteLine(stopWatch.Elapsed.ToString() + " miliseconds taken");
+                Trace.WriteLine("Sorted:" + result);
                 DisplayListboxData(listSensorB, listBoxSensorB);
                 TimerAndDisplay(stopWatch, txSensorBSortInsertion);
             }
@@ -277,15 +289,20 @@ namespace MalinSpaceScience
         //Button click event to execute the Iterative search for Sensor A
         private void btSensorASearchIterative_Click(object sender, EventArgs e)
         {
+            Trace.WriteLine("Iterative Search Button for Sensor A is Clicked");
             try
             {
                 InsertionSort(listSensorA);
                 DisplayListboxData(listSensorA, listBoxSensorA);
                 int target = int.Parse(txTargetSA.Text);
+                Trace.WriteLine("Target search:" + target);
                 var stopWatch = new Stopwatch();
                 stopWatch.Start();
                 int idx = BinarySearchIterative(listSensorA, target, 0, NumberOfNodes(listSensorA));
                 stopWatch.Stop();
+                Trace.WriteLine("target found in Index:" + idx);
+                Trace.WriteLine("Data is:" + listSensorA.ElementAt(idx));
+                Trace.WriteLine("Ticks taken to search:" + stopWatch.ElapsedTicks);
                 highLightListboxData(idx, listBoxSensorA, listSensorA);
                 TimerAndDisplay(stopWatch, txSensorASearchIterative);
             }
@@ -300,15 +317,20 @@ namespace MalinSpaceScience
         //Button click event to execute the Recursive search for Sensor A
         private void btSensorASearchRecursive_Click(object sender, EventArgs e)
         {
+            Trace.WriteLine("Recursive Search Button for Sensor A is Clicked");
             try
             {
                 InsertionSort(listSensorA);
                 DisplayListboxData(listSensorA, listBoxSensorA);
                 int target = int.Parse(txTargetSA.Text);
+                Trace.WriteLine("Target search:" + target);
                 var stopWatch = new Stopwatch();
                 stopWatch.Start();
                 int idx = BinarySearchIterative(listSensorA, target, 0, NumberOfNodes(listSensorA));
                 stopWatch.Stop();
+                Trace.WriteLine("target found in Index:" + idx);
+                Trace.WriteLine("Data is:" + listSensorA.ElementAt(idx));
+                Trace.WriteLine("Ticks taken to search:" + stopWatch.ElapsedTicks);
                 highLightListboxData(idx, listBoxSensorA, listSensorA);
                 TimerAndDisplay(stopWatch, txSensorASearchRecursive);
             }
@@ -321,6 +343,7 @@ namespace MalinSpaceScience
         //Button click event to execute the Iterative search for Sensor B
         private void btSensorBSearchIterative_Click(object sender, EventArgs e)
         {
+            Trace.WriteLine("Iterative Search Button for SensorB is Clicked");
             try
             {
                 InsertionSort(listSensorB);
@@ -330,6 +353,9 @@ namespace MalinSpaceScience
                 stopWatch.Start();
                 int idx = BinarySearchIterative(listSensorB, target, 0, NumberOfNodes(listSensorB));
                 stopWatch.Stop();
+                Trace.WriteLine("target found in Index:" + idx);
+                Trace.WriteLine("Data is:" + listSensorA.ElementAt(idx));
+                Trace.WriteLine("Ticks taken to search:" + stopWatch.ElapsedTicks);
                 highLightListboxData(idx, listBoxSensorB, listSensorB);
                 TimerAndDisplay(stopWatch, txSensorBSearchIterative);
             }
@@ -343,6 +369,7 @@ namespace MalinSpaceScience
         //Button click event to execute the Recursive search for Sensor B
         private void btSensorBSearchRecursive_Click(object sender, EventArgs e)
         {
+            Trace.WriteLine("Recursive Search Button for SensorB is Clicked");
             try
             {
                 InsertionSort(listSensorB);
@@ -352,6 +379,9 @@ namespace MalinSpaceScience
                 stopWatch.Start();
                 int idx = BinarySearchIterative(listSensorB, target, 0, NumberOfNodes(listSensorB));
                 stopWatch.Stop();
+                Trace.WriteLine("target found in Index:" + idx);
+                Trace.WriteLine("Data is:" + listSensorA.ElementAt(idx));
+                Trace.WriteLine("Ticks taken to search:" + stopWatch.ElapsedTicks);
                 highLightListboxData(idx, listBoxSensorB, listSensorB);
                 TimerAndDisplay(stopWatch, txSensorBSearchRecursive);
             }
