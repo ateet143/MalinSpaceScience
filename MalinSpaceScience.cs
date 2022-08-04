@@ -141,46 +141,77 @@ namespace MalinSpaceScience
         //4.12	Create four button click methods that will sort the LinkedList using the Selection and Insertion methods
         private void btSensorASortSelection_Click(object sender, EventArgs e)
         {
-            // create as instance of stopWatch
-            //start the watch before sorting and stop after the sorting
-            var stopWatch = new Stopwatch();
-            stopWatch.Start();
-            SelectionSort(listSensorA);
-            stopWatch.Stop();
-            //Displays the data in the listbox
-            DisplayListboxData(listSensorA, listBoxSensorA);
-            //display the time under the corresponding textbox
-            TimerAndDisplay(stopWatch, txSensorASortSelection);
+            if(listSensorA.Count > 0)
+            {
+                // create as instance of stopWatch
+                //start the watch before sorting and stop after the sorting
+                var stopWatch = new Stopwatch();
+                stopWatch.Start();
+                SelectionSort(listSensorA);
+                stopWatch.Stop();
+                //Displays the data in the listbox
+                DisplayListboxData(listSensorA, listBoxSensorA);
+                //display the time under the corresponding textbox
+                TimerAndDisplay(stopWatch, txSensorASortSelection);
+            }
+            else
+            {
+                MessageBox.Show("Error: List is Empty.\nLoad the data in the sensor first");
+            }
+            
         }
 
         private void btSensorBSortSelection_Click(object sender, EventArgs e)
         {
-            var stopWatch = new Stopwatch();
-            stopWatch.Start();
-            SelectionSort(listSensorB);
-            stopWatch.Stop();
-            DisplayListboxData(listSensorB, listBoxSensorB);
-            TimerAndDisplay(stopWatch, txSensorBSortSelection);
+            if (listSensorB.Count > 0)
+            {
+                var stopWatch = new Stopwatch();
+                stopWatch.Start();
+                SelectionSort(listSensorB);
+                stopWatch.Stop();
+                DisplayListboxData(listSensorB, listBoxSensorB);
+                TimerAndDisplay(stopWatch, txSensorBSortSelection);
+            }
+            else
+            {
+                MessageBox.Show("Error: List is Empty.\nLoad the data in the sensor first");
+            }
+
         }
 
         private void btSensorASortInsertion_Click(object sender, EventArgs e)
         {
-            var stopWatch = new Stopwatch();
-            stopWatch.Start();
-            InsertionSort(listSensorA);
-            stopWatch.Stop();
-            DisplayListboxData(listSensorA, listBoxSensorA);
-            TimerAndDisplay(stopWatch, txSensorASortInsertion);
+            if (listSensorA.Count > 0)
+            {
+                var stopWatch = new Stopwatch();
+                stopWatch.Start();
+                InsertionSort(listSensorA);
+                stopWatch.Stop();
+                DisplayListboxData(listSensorA, listBoxSensorA);
+                TimerAndDisplay(stopWatch, txSensorASortInsertion);
+            }
+            else
+            {
+                MessageBox.Show("Error: List is Empty.\nLoad the data in the sensor first");
+            }
         }
 
         private void btSensorBSortInsertion_Click(object sender, EventArgs e)
         {
-            var stopWatch = new Stopwatch();
-            stopWatch.Start();
-            InsertionSort(listSensorB);
-            stopWatch.Stop();
-            DisplayListboxData(listSensorB, listBoxSensorB);
-            TimerAndDisplay(stopWatch, txSensorBSortInsertion);
+            if (listSensorB.Count > 0)
+            {
+                var stopWatch = new Stopwatch();
+                stopWatch.Start();
+                InsertionSort(listSensorB);
+                stopWatch.Stop();
+                DisplayListboxData(listSensorB, listBoxSensorB);
+                TimerAndDisplay(stopWatch, txSensorBSortInsertion);
+            }
+            else
+            {
+                MessageBox.Show("Error: List is Empty.\nLoad the data in the sensor first");
+            }
+
         }
 
         /// 4.9	Create a method called “BinarySearchIterative” which has the following four parameters:
@@ -260,7 +291,7 @@ namespace MalinSpaceScience
             }
             catch (Exception)
             {
-                MessageBox.Show("!User Error: No Data in Search Target");
+                MessageBox.Show("Error: No Data in Search Target.");
             }
 
         }
@@ -488,7 +519,7 @@ namespace MalinSpaceScience
                 int target = int.Parse(textBox.Text);
                 if (minimumValue == -1 || maximumValue == -1)
                 {
-                    errorMessage = string.Format("!ERROR: No Data Loaded in the Sensor");
+                    errorMessage = string.Format("ERROR: No Data Loaded in the Sensor.\nLoad the data in the Sensor first");
                     return false;
                 }
                 if (target < minimumValue || target > maximumValue)
